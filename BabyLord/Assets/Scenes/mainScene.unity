@@ -261,7 +261,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: arrow down
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9075189205340197571, guid: 6c627dde16040874aa6665a5c7e07066, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c627dde16040874aa6665a5c7e07066, type: 3}
 --- !u!1 &1794455014
 GameObject:
@@ -296,7 +297,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.49441648, y: 0.006036103}
+  m_Offset: {x: 0.25, y: 0.006036103}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -307,7 +308,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.41952562, y: 0.9946531}
+  m_Size: {x: 0.48, y: 0.9946531}
   m_EdgeRadius: 0
 --- !u!212 &1794455016
 SpriteRenderer:

@@ -36,4 +36,11 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+    /*private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Arrows")
+        {
+            Destroy(gameObject);
+        }
+    }*/
 }
