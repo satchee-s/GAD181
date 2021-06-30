@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637598050872341804
-    m_Hash: 3440307892
+      ticks: 637601569406366634
+    m_Hash: 1799865838
   m_LockFileStatus:
     m_FilePath: C:/Users/satch/OneDrive/Desktop/GAD181/BabyLord/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637598051470156101
-    m_Hash: 1280265406
+      ticks: 637601569406427634
+    m_Hash: 2286830850
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -102,6 +102,7 @@ m_ResolvedPackages:
     - 6.0.1
     - 6.0.3
     - 6.0.4
+    - 7.0.0-pre.2
     compatible:
     - 6.0.3
     - 6.0.4
@@ -297,6 +298,7 @@ m_ResolvedPackages:
     - 5.0.3
     - 5.0.4
     - 6.0.0-pre.2
+    - 6.0.0-pre.3
     compatible:
     - 5.0.3
     - 5.0.4
@@ -484,6 +486,7 @@ m_ResolvedPackages:
     - 6.0.0
     - 6.0.1
     - 7.0.0-pre.2
+    - 7.0.0-pre.3
     compatible:
     - 6.0.0
     - 6.0.1
