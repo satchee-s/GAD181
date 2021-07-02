@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6507922584719558024}
   - component: {fileID: 2473336616956743401}
   - component: {fileID: 2473336616956743382}
+  - component: {fileID: 1278585359500070953}
   m_Layer: 0
   m_Name: arrow down
   m_TagString: Arrows
@@ -159,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715d05ece77017545ab9389dbbe72c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forcefield: {fileID: 0}
   KeyToPress: 274
   beatSpeed: 6
   spawnFrequency: 2
@@ -166,3 +168,24 @@ MonoBehaviour:
   rightArrow: {fileID: 6903839166427833343, guid: 5ed53fdeb8c202642b11c1466cea111c, type: 3}
   upArrow: {fileID: 5052596636620990323, guid: e37ba219c0694b24ab345e4e72c7c229, type: 3}
   downArrow: {fileID: 8213914113105861141}
+--- !u!50 &1278585359500070953
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213914113105861141}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

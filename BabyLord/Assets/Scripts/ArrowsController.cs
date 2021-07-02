@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowsController : MonoBehaviour
 {
-    Forcefield forcefield;
+    public Forcefield forcefield;
 
     public KeyCode KeyToPress;
     public float beatSpeed = 6f;
@@ -41,7 +41,7 @@ public class ArrowsController : MonoBehaviour
         {
             if (canBePressed)
             {
-                forcefield.ChangeSize(0.05f);
+                forcefield.ChangeSize(0.1f);
                 gameObject.SetActive(false); //destroys the gameobject when a arrow key is pressed
             }
         }
@@ -59,10 +59,11 @@ public class ArrowsController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         canBePressed = false; //when an arrow exists the player's collider offset, it's destroyed
+        Debug.Log("Arrow missed");
+        Destroy(gameObject);
         if (other.gameObject.CompareTag("Forcefield") && this.gameObject.activeSelf == true)
         {
-            forcefield.ChangeSize(-0.05f);
-            Destroy(this.gameObject);
+            forcefield.ChangeSize(-0.1f);
         }
     }
 

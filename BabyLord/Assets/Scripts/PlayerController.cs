@@ -1,23 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //public Text ScoreText;
+    //private int score;
     private bool isPressed = false;
-   
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if(isPressed == false)
+        if (isPressed == false)
         {
-            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 Debug.Log("Left arrow pressed");
             }
@@ -34,13 +31,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Down arrow pressed");
             }
         }
-        
+
     }
-    /*private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Arrows")
-        {
-            Destroy(gameObject);
-        }
-    }*/
+    
 }
