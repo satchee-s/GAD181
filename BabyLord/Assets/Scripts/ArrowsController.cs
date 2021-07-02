@@ -5,10 +5,11 @@ using UnityEngine;
 public class ArrowsController : MonoBehaviour
 {
     public Forcefield forcefield;
+    public Scoring scoring;
 
     public KeyCode KeyToPress;
     public float beatSpeed = 6f;
-    private bool canBePressed; //buttons pressed on trigger with player
+    public bool canBePressed; //buttons pressed on trigger with player
 
     private float spawnTime;
     public float spawnFrequency = 1f;
@@ -30,6 +31,8 @@ public class ArrowsController : MonoBehaviour
         arrowPrefabs[3] = downArrow;
 
         forcefield = GameObject.Find("Forcefield").GetComponent<Forcefield>();
+        scoring = GameObject.Find("Forcefield").GetComponent<Scoring>();
+
     }
 
     void Update()
@@ -42,6 +45,7 @@ public class ArrowsController : MonoBehaviour
             if (canBePressed)
             {
                 forcefield.ChangeSize(0.1f);
+                scoring.ChangeScore(); //changes the score
                 gameObject.SetActive(false); //destroys the gameobject when a arrow key is pressed
             }
         }
@@ -72,7 +76,7 @@ public class ArrowsController : MonoBehaviour
         spawnTime += Time.deltaTime;
         if (spawnTime >= spawnFrequency)
         {
-            int arrowType = Random.Range(0, 3);
+            int arrowType = Random.Range(0, 4);
             newArrow = arrowPrefabs[arrowType];
             Instantiate(newArrow, initialArrowPosition, Quaternion.identity); //new arrow is generated at the starting point
             spawnTime = 0;

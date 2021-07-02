@@ -344,6 +344,7 @@
 "Assets/Scripts/ArrowsController.cs"
 "Assets/Scripts/Forcefield.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/Scoring.cs"
 -langversion:8.0
 
 /deterministic

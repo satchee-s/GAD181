@@ -6,25 +6,11 @@ using UnityEngine.UI;
 public class Scoring : MonoBehaviour
 {
     public Text ScoreText;
-    private int score;
-    //public static Scoring instance;
-    private void Start()
-    {
-        score = 0;
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.GetComponent<ArrowsController>() != null)
-        {
-            score++;
-            IsScored();
-        }
-        
-    }
+    private int score = 0;
 
-    public void IsScored()
+    public void ChangeScore()
     {
-        
+        score++;
         ScoreText.text = "Score: " + score.ToString();
     }
 }

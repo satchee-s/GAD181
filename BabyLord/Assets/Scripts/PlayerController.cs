@@ -5,11 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    //public Text ScoreText;
-    //private int score;
     private bool isPressed = false;
-
-    // Update is called once per frame
     void Update()
     {
         if (isPressed == false)
