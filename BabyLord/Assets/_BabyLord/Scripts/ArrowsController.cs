@@ -11,25 +11,14 @@ public class ArrowsController : MonoBehaviour
     public float beatSpeed = 6f;
     public bool canBePressed; //buttons pressed on trigger with player
 
-    private float spawnTime;
+   /* private float spawnTime;
     public float spawnFrequency = 1f;
-    private GameObject newArrow;
-    private Vector2 initialArrowPosition = new Vector2(10, 0);
+    private GameObject newArrow;*/
 
-    private GameObject[] arrowPrefabs;
-    public GameObject leftArrow;
-    public GameObject rightArrow;
-    public GameObject upArrow;
-    public GameObject downArrow;
+   
     
     void Start()
     {
-        arrowPrefabs = new GameObject[4];
-        arrowPrefabs[0] = leftArrow;
-        arrowPrefabs[1] = rightArrow;
-        arrowPrefabs[2] = upArrow;
-        arrowPrefabs[3] = downArrow;
-
         forcefield = GameObject.Find("Forcefield").GetComponent<Forcefield>();
         scoring = GameObject.Find("Forcefield").GetComponent<Scoring>();
 
@@ -49,7 +38,7 @@ public class ArrowsController : MonoBehaviour
                 gameObject.SetActive(false); //destroys the gameobject when a arrow key is pressed
             }
         }
-        ArrowSpawning();
+        //ArrowSpawning();
     }
 
 
@@ -71,15 +60,5 @@ public class ArrowsController : MonoBehaviour
         }
     }
 
-    private void ArrowSpawning()
-    {
-        spawnTime += Time.deltaTime;
-        if (spawnTime >= spawnFrequency)
-        {
-            int arrowType = Random.Range(0, 4);
-            newArrow = arrowPrefabs[arrowType];
-            Instantiate(newArrow, initialArrowPosition, Quaternion.identity); //new arrow is generated at the starting point
-            spawnTime = 0;
-        }
-    }
+   /* */
 }
