@@ -159,10 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715d05ece77017545ab9389dbbe72c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forcefield: {fileID: 0}
+  scoring: {fileID: 0}
   KeyToPress: 275
   beatSpeed: 6
-  spawnFrequency: 2
-  leftArrow: {fileID: 7823375993166501637, guid: cf2048b40ff8dbe44bb3f56ba30424c0, type: 3}
-  rightArrow: {fileID: 6903839166427833343}
-  upArrow: {fileID: 5052596636620990323, guid: e37ba219c0694b24ab345e4e72c7c229, type: 3}
-  downArrow: {fileID: 8213914113105861141, guid: 6c627dde16040874aa6665a5c7e07066, type: 3}
+  canBePressed: 0

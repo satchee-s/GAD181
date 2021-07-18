@@ -8,25 +8,17 @@ public class ArrowsController : MonoBehaviour
     public Scoring scoring;
 
     public KeyCode KeyToPress;
-    public float beatSpeed = 6f;
-    public bool canBePressed; //buttons pressed on trigger with player
-
-   /* private float spawnTime;
-    public float spawnFrequency = 1f;
-    private GameObject newArrow;*/
-
-   
+    private float beatSpeed = 10f;
+    public bool canBePressed; //buttons pressed on trigger with player   
     
     void Start()
     {
         forcefield = GameObject.Find("Forcefield").GetComponent<Forcefield>();
         scoring = GameObject.Find("Forcefield").GetComponent<Scoring>();
-
     }
 
     void Update()
     {
-
         transform.position -= new Vector3(beatSpeed * Time.deltaTime, 0f, 0f); //moves the arrows per frame on the x axis
 
         if (Input.GetKeyDown(KeyToPress))
@@ -38,7 +30,6 @@ public class ArrowsController : MonoBehaviour
                 gameObject.SetActive(false); //destroys the gameobject when a arrow key is pressed
             }
         }
-        //ArrowSpawning();
     }
 
 
@@ -59,6 +50,4 @@ public class ArrowsController : MonoBehaviour
             forcefield.ChangeSize(-0.1f);
         }
     }
-
-   /* */
 }

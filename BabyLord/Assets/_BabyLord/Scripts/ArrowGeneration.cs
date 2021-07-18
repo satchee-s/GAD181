@@ -13,11 +13,11 @@ public class ArrowGeneration : MonoBehaviour
     private float spawnTime = 0;
     public float spawnFrequency = 5f;
     private GameObject newArrow;
-    private Vector2 initialArrowPosition = new Vector2(10, 0);
+    private Vector2 initialArrowPosition = new Vector2(10, 0); //sets the point where arrows are spawned
 
     private void Start()
     {
-        arrowPrefabs = new GameObject[4];
+        arrowPrefabs = new GameObject[4]; //creates an array containing each type of arrow
         arrowPrefabs[0] = leftArrow;
         arrowPrefabs[1] = rightArrow;
         arrowPrefabs[2] = upArrow;
@@ -25,18 +25,17 @@ public class ArrowGeneration : MonoBehaviour
     }
     private void Update()
     {
-        ArrowSpawn();
+        //ArrowSpawn();
     }
 
-    private void ArrowSpawn()
+    public void ArrowSpawn()
     {
-        spawnTime += Time.deltaTime;
-        if (spawnTime >= spawnFrequency)
-        {
-            int arrowType = Random.Range(0, 4);
-            newArrow = arrowPrefabs[arrowType];
-            Instantiate(newArrow, initialArrowPosition, Quaternion.identity); //new arrow is generated at the starting point
-            spawnTime = 0;
-        }
+        //spawnTime += Time.deltaTime;
+        //if (spawnTime >= spawnFrequency)
+        int arrowType = Random.Range(0, 4);
+        newArrow = arrowPrefabs[arrowType];
+        Instantiate(newArrow, initialArrowPosition, Quaternion.identity); //new arrow is generated at the starting point
+        //spawnTime = 0;
+        
     }
 }
