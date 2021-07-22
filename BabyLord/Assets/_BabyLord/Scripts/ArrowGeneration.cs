@@ -23,19 +23,11 @@ public class ArrowGeneration : MonoBehaviour
         arrowPrefabs[2] = upArrow;
         arrowPrefabs[3] = downArrow;
     }
-    private void Update()
-    {
-        //ArrowSpawn();
-    }
 
     public void ArrowSpawn()
     {
-        //spawnTime += Time.deltaTime;
-        //if (spawnTime >= spawnFrequency)
         int arrowType = Random.Range(0, 4);
         newArrow = arrowPrefabs[arrowType];
         Instantiate(newArrow, initialArrowPosition, Quaternion.identity); //new arrow is generated at the starting point
-        //spawnTime = 0;
-        
     }
 }

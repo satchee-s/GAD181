@@ -25,7 +25,7 @@ public class ArrowsController : MonoBehaviour
         {
             if (canBePressed)
             {
-                forcefield.ChangeSize(0.1f);
+                forcefield.ChangeSize(0.07f);
                 scoring.ChangeScore(); //changes the score
                 gameObject.SetActive(false); //destroys the gameobject when a arrow key is pressed
             }
@@ -47,7 +47,7 @@ public class ArrowsController : MonoBehaviour
         Destroy(gameObject);
         if (other.gameObject.CompareTag("Forcefield") && this.gameObject.activeSelf == true)
         {
-            forcefield.ChangeSize(-0.1f);
+            forcefield.ChangeSize(-0.07f);
         }
     }
 }
