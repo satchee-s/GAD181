@@ -65,6 +65,7 @@
     <Compile Include="Assets\_BabyLord\Scripts\ArrowsController.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\AudioController.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\Scoring.cs" />
+    <Compile Include="Assets\_BabyLord\Scripts\SMGScript.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\ButtonController.cs" />
   </ItemGroup>
   <ItemGroup>

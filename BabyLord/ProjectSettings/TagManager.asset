@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Arrows
   - Forcefield
+  - Barrier
   layers:
   - Default
   - TransparentFX

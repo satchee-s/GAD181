@@ -12,7 +12,7 @@ public class ButtonController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (playState == false)//checks if the music is being played or paused
             {

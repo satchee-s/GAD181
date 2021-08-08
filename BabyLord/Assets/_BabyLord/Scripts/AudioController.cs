@@ -14,7 +14,7 @@ public class AudioController : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         volumeCheck = new float[1];
-        generationVolume = 0.51f;
+        generationVolume = 0;
 
         arrowGeneration = GameObject.Find("SpawnPoint").GetComponent<ArrowGeneration>();
     }
@@ -25,7 +25,7 @@ public class AudioController : MonoBehaviour
         source.GetOutputData(volumeCheck, 0);
         if (Mathf.Abs(volumeCheck[0]) > generationVolume)
         {
-            if (timer >= 0.7) //cooldown time for generating arrows
+            if (timer >= 0.513) //cooldown time for generating arrows
             {
                 arrowGeneration.ArrowSpawn();//calls function to generate a random arrow
                 timer = 0;

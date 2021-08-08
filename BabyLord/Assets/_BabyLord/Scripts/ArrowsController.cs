@@ -8,7 +8,7 @@ public class ArrowsController : MonoBehaviour
     public Scoring scoring;
 
     public KeyCode KeyToPress;
-    private float beatSpeed = 10f;
+    public float beatSpeed = 9f;
     public bool canBePressed; //buttons pressed on trigger with player   
     
     void Start()
@@ -19,6 +19,8 @@ public class ArrowsController : MonoBehaviour
 
     void Update()
     {
+        beatSpeed = Random.Range(9f, 13f);
+        //Debug.Log(beatSpeed);
         transform.position -= new Vector3(beatSpeed * Time.deltaTime, 0f, 0f); //moves the arrows per frame on the x axis
 
         if (Input.GetKeyDown(KeyToPress))
@@ -42,12 +44,16 @@ public class ArrowsController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Barrier"))
+        {
+            Destroy(gameObject);
+        }
         canBePressed = false; //when an arrow exists the player's collider offset, it's destroyed
-        Debug.Log("Arrow missed");
-        Destroy(gameObject);
+        
         if (other.gameObject.CompareTag("Forcefield") && this.gameObject.activeSelf == true)
         {
             forcefield.ChangeSize(-0.07f);
         }
+        
     }
 }
