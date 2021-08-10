@@ -5,29 +5,36 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool isPressed = false;
-    void Update()
+    EnemyController enemy;
+    public bool activeEnemy;
+    private int fightCount;
+    private Vector2 position = new Vector2 (10f, 0);
+
+    private void Start()
     {
-        if (isPressed == false)
+        enemy = GameObject.Find("GameController").GetComponent<EnemyController>();
+        activeEnemy = false;
+        fightCount = 0;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (activeEnemy == false && fightCount < 5)
             {
-                Debug.Log("Left arrow pressed");
+                enemy.SetEnemyValues(Random.Range(0, 3));
+                activeEnemy = true;
+                Instantiate(enemy.currentEnemy, position , Quaternion.identity);
+                Debug.Log("Enemy values called, enemy spawned when enter key was pressed");
+                fightCount++;
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+
+            if (activeEnemy == false && fightCount == 5)
             {
-                Debug.Log("Right arrow pressed");
-            }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                Debug.Log("Up arrow pressed");
-            }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                Debug.Log("Down arrow pressed");
+                enemy.SetEnemyValues(3);
+                activeEnemy = true;
             }
         }
-
     }
-    
 }

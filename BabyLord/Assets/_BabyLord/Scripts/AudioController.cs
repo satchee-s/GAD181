@@ -9,6 +9,7 @@ public class AudioController : MonoBehaviour
     private float timer;
     public float generationVolume;
     ArrowGeneration arrowGeneration;
+    EnemyController enemy;
 
     private void Start()
     {
@@ -17,6 +18,8 @@ public class AudioController : MonoBehaviour
         generationVolume = 0;
 
         arrowGeneration = GameObject.Find("SpawnPoint").GetComponent<ArrowGeneration>();
+        enemy = GameObject.Find("GameController").GetComponent<EnemyController>();
+
     }
 
     private void Update()
@@ -25,7 +28,7 @@ public class AudioController : MonoBehaviour
         source.GetOutputData(volumeCheck, 0);
         if (Mathf.Abs(volumeCheck[0]) > generationVolume)
         {
-            if (timer >= 0.513) //cooldown time for generating arrows
+            if (timer >= enemy.coolDown) //cooldown time for generating arrows
             {
                 arrowGeneration.ArrowSpawn();//calls function to generate a random arrow
                 timer = 0;

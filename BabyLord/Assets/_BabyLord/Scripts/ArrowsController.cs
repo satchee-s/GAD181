@@ -6,30 +6,31 @@ public class ArrowsController : MonoBehaviour
 {
     public Forcefield forcefield;
     public Scoring scoring;
+    public EnemyController enemy;
 
-    public KeyCode KeyToPress;
-    public float beatSpeed = 9f;
+    public KeyCode keyToPress;
+    public float beatSpeed;
     public bool canBePressed; //buttons pressed on trigger with player   
     
     void Start()
     {
         forcefield = GameObject.Find("Forcefield").GetComponent<Forcefield>();
         scoring = GameObject.Find("Forcefield").GetComponent<Scoring>();
+        enemy = GameObject.Find("GameController").GetComponent<EnemyController>();
     }
 
     void Update()
     {
-        beatSpeed = Random.Range(9f, 13f);
-        //Debug.Log(beatSpeed);
+        beatSpeed = enemy.arrowSpeed;
         transform.position -= new Vector3(beatSpeed * Time.deltaTime, 0f, 0f); //moves the arrows per frame on the x axis
 
-        if (Input.GetKeyDown(KeyToPress))
+        if (Input.GetKeyDown(keyToPress))
         {
             if (canBePressed)
             {
                 forcefield.ChangeSize(0.07f);
                 scoring.ChangeScore(); //changes the score
-                gameObject.SetActive(false); //destroys the gameobject when a arrow key is pressed
+                gameObject.SetActive(false); //destroys the gameobject when an arrow key is pressed
             }
         }
     }
