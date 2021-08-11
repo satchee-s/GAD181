@@ -5,11 +5,9 @@ using UnityEngine;
 public class Forcefield : MonoBehaviour
 {
     public GameObject player;
-    PlayerController playerController;
 
     private void Start()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
     public void ChangeSize(float scaleFactor)
     {
@@ -22,13 +20,11 @@ public class Forcefield : MonoBehaviour
             Destroy(player);
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
-            playerController.activeEnemy = false;
+            transform.localScale = new Vector2(1, 1);
         }
     }
 }

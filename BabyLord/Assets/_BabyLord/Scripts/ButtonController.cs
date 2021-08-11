@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    AudioController source;
-    private bool playState = false;
+    public AudioController source;
+    public bool playState = false;
     PlayerController enemy;
     private void Start()
     {
@@ -26,7 +26,7 @@ public class ButtonController : MonoBehaviour
             else if (playState == true && enemy.activeEnemy == true)
             {
                 source.isPaused();
-                Debug.Log("Song playing");
+                Debug.Log("Song paused");
                 playState = false;
             }
         }

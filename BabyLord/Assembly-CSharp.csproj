@@ -67,6 +67,7 @@
     <Compile Include="Assets\_BabyLord\Scripts\Scoring.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\EnemyController.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\ButtonController.cs" />
+    <Compile Include="Assets\_BabyLord\Scripts\Death.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

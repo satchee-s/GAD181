@@ -8,7 +8,7 @@ public class ArrowsController : MonoBehaviour
     public Scoring scoring;
     public EnemyController enemy;
 
-    public KeyCode keyToPress;
+    public KeyCode KeyToPress;
     public float beatSpeed;
     public bool canBePressed; //buttons pressed on trigger with player   
     
@@ -24,11 +24,11 @@ public class ArrowsController : MonoBehaviour
         beatSpeed = enemy.arrowSpeed;
         transform.position -= new Vector3(beatSpeed * Time.deltaTime, 0f, 0f); //moves the arrows per frame on the x axis
 
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown(KeyToPress))
         {
             if (canBePressed)
             {
-                forcefield.ChangeSize(0.07f);
+                forcefield.ChangeSize(0.2f);
                 scoring.ChangeScore(); //changes the score
                 gameObject.SetActive(false); //destroys the gameobject when an arrow key is pressed
             }

@@ -19,21 +19,21 @@ public class EnemyController : MonoBehaviour
         if (enemyType == 0)
         {
             arrowSpeed = 9f;
-            coolDown = 0.4f;
+            coolDown = 0.7f;
             spawnRange = false;
             currentEnemy = pistol;
         }
         else if (enemyType == 1)
         {
             arrowSpeed = 8f;
-            coolDown = 0.1f;
-            spawnRange = false;
+            coolDown = 0.6f;
+            spawnRange = true;
             currentEnemy = SMG;
         }
         else if (enemyType == 2)
         {
-            arrowSpeed = 14f;
-            coolDown = 0.4f;
+            arrowSpeed = 17f;
+            coolDown = 0.7f;
             spawnRange = false;
             currentEnemy = rifle;
         }
