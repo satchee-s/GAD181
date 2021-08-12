@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private int fightCount;
     private Vector2 position = new Vector2(10f, 0);
     private bool isPressed = false;
+    public int enemyType;
 
     private void Start()
     {
@@ -24,7 +25,8 @@ public class PlayerController : MonoBehaviour
         {
             if (activeEnemy == false && fightCount < 5)
             {
-                enemy.SetEnemyValues(Random.Range(0, 3));
+                enemyType = (Random.Range(0, 3));
+                enemy.SetEnemyValues(enemyType);
                 activeEnemy = true;
                 Instantiate(enemy.currentEnemy, position, Quaternion.identity);
                 Debug.Log("Enemy number " + fightCount);

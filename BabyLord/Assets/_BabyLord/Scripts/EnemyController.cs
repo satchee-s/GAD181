@@ -14,30 +14,30 @@ public class EnemyController : MonoBehaviour
     public GameObject boss;
     public GameObject currentEnemy;
 
-    public void SetEnemyValues (int enemyType)
+    public void SetEnemyValues (int enemy)
     {
-        if (enemyType == 0)
+        if (enemy == 0)
         {
             arrowSpeed = 9f;
             coolDown = 0.7f;
             spawnRange = false;
             currentEnemy = pistol;
         }
-        else if (enemyType == 1)
+        else if (enemy == 1)
         {
             arrowSpeed = 8f;
             coolDown = 0.6f;
             spawnRange = true;
             currentEnemy = SMG;
         }
-        else if (enemyType == 2)
+        else if (enemy == 2)
         {
             arrowSpeed = 17f;
             coolDown = 0.7f;
             spawnRange = false;
             currentEnemy = rifle;
         }
-        else if (enemyType == 3)
+        else if (enemy == 3)
         {
             arrowSpeed = 11.7f;
             coolDown = 0.513f;

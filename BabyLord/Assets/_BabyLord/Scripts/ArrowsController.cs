@@ -11,7 +11,7 @@ public class ArrowsController : MonoBehaviour
     public KeyCode KeyToPress;
     public float beatSpeed;
     public bool canBePressed; //buttons pressed on trigger with player   
-    
+    public float ffscalef = 0.2f;
     void Start()
     {
         forcefield = GameObject.Find("Forcefield").GetComponent<Forcefield>();
@@ -28,7 +28,7 @@ public class ArrowsController : MonoBehaviour
         {
             if (canBePressed)
             {
-                forcefield.ChangeSize(0.2f);
+                forcefield.ChangeSize(ffscalef);
                 scoring.ChangeScore(); //changes the score
                 gameObject.SetActive(false); //destroys the gameobject when an arrow key is pressed
             }
@@ -53,7 +53,7 @@ public class ArrowsController : MonoBehaviour
         
         if (other.gameObject.CompareTag("Forcefield") && this.gameObject.activeSelf == true)
         {
-            forcefield.ChangeSize(-0.07f);
+            forcefield.ChangeSize(ffscalef*-1);
         }
         
     }
