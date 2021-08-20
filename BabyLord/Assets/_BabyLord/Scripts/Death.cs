@@ -7,13 +7,13 @@ public class Death : MonoBehaviour
     PlayerController player;
     ButtonController button;
     EnemyController enemy;
-    PowerUpController powerUp;
+    PowerUpController power;
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         button = GameObject.Find("Button").GetComponent<ButtonController>();
         enemy = GameObject.Find("GameController").GetComponent<EnemyController>();
-        powerUp = GameObject.Find("powerUp").GetComponent<PowerUpController>();
+        power = GameObject.Find("PowerupSpawner").GetComponent<PowerUpController>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,10 +23,15 @@ public class Death : MonoBehaviour
             player.activeEnemy = false;
             button.playState = false;
             button.source.isPaused();
-            if (player.enemyType == 0)
-            {
-                powerUp.powerupType[currentpowerup] = 0;
-            }
+            //activate respective powerup
+        }
+    }
+
+    void ActivatePowerUp()
+    {
+        if (player.fightCount < 5)
+        {
+            power.SetPoweup(player.enemyType);
         }
     }
 }

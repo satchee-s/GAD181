@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Forcefield : MonoBehaviour
 {
     public GameObject player;
-
-    private void Start()
-    {
-    }
     public void ChangeSize(float scaleFactor)
     {
         if (transform.localScale.x >= 0.5f)// <- if the forcefield hits the player when it reaches 0.3
@@ -17,7 +14,7 @@ public class Forcefield : MonoBehaviour
         }
         else
         {
-            Destroy(player);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,5 +23,10 @@ public class Forcefield : MonoBehaviour
         {
             transform.localScale = new Vector2(1, 1);
         }
+    }
+
+    public void PistolPowerup()
+    {
+        transform.localScale = new Vector2(transform.localScale.x + 0.4f, transform.localScale.y + 0.4f);
     }
 }

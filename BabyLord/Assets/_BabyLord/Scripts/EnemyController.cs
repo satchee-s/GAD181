@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public int[] enemyType = { 0, 1, 2, 3 };
+    enum enemyType {Pistol, SMG, Rifle, Boss};
     public float arrowSpeed;
     public float coolDown;
     public bool spawnRange;
@@ -16,30 +16,30 @@ public class EnemyController : MonoBehaviour
 
     public void SetEnemyValues (int enemy)
     {
-        if (enemy == 0)
+        if (enemy == (int)enemyType.Pistol)
         {
-            arrowSpeed = 9f;
-            coolDown = 0.7f;
+            arrowSpeed = 11f;
+            coolDown = 0.4f;
             spawnRange = false;
             currentEnemy = pistol;
         }
-        else if (enemy == 1)
+        else if (enemy == (int)enemyType.SMG)
         {
-            arrowSpeed = 8f;
-            coolDown = 0.6f;
+            arrowSpeed = 8.5f;
+            coolDown = 0.5f;
             spawnRange = true;
             currentEnemy = SMG;
         }
-        else if (enemy == 2)
+        else if (enemy == (int)enemyType.Rifle)
         {
-            arrowSpeed = 17f;
-            coolDown = 0.7f;
+            arrowSpeed = 18f;
+            coolDown = 0.55f;
             spawnRange = false;
             currentEnemy = rifle;
         }
-        else if (enemy == 3)
+        else if (enemy == (int)enemyType.Boss)
         {
-            arrowSpeed = 11.7f;
+            arrowSpeed = 13f;
             coolDown = 0.513f;
             spawnRange = true;
             currentEnemy = boss;

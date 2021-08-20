@@ -15,7 +15,7 @@ public class ButtonController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (playState == false && enemy.activeEnemy == true)//checks if the music is being played or paused
             {

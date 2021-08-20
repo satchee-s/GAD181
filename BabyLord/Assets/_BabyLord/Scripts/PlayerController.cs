@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     EnemyController enemy;
     public bool activeEnemy;
-    private int fightCount;
-    private Vector2 position = new Vector2(10f, 0);
+    public int fightCount;
+    private Vector2 position = new Vector2(10.5f, 0);
     private bool isPressed = false;
     public int enemyType;
 
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (activeEnemy == false && fightCount < 5)
             {

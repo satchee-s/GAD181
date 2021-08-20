@@ -46,7 +46,14 @@ public class ArrowGeneration : MonoBehaviour
         if (enemy.spawnRange == true)
         {
             colliderSize = forceCollider.bounds.extents; // gets the size of the force field collider
-            initialArrowPosition.y = Random.Range((colliderSize.y * -1) + 1, colliderSize.y - 1); //sets the newly generated arrow position anywhere on the y axis within reach of the forcefield
+            if (colliderSize.y < 8f)
+            {
+                initialArrowPosition.y = Random.Range((colliderSize.y * -1) + 1, colliderSize.y - 1); //sets the newly generated arrow position anywhere on the y axis within reach of the forcefield
+            }
+            else
+            {
+                initialArrowPosition.y = Random.Range((8f * -1) + 1, 8f - 1);
+            }
         }
         else if (enemy.spawnRange == false)
         {

@@ -3,34 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUpController : MonoBehaviour
-{
-    public int[] powerType = { 0, 1, 2 };
-    public ArrowsController arrows;
-    public Scoring scoring;
-    void Start()
-    {
-        scoring = GameObject.Find("Forcefield").GetComponent<Scoring>();
-        arrows = GameObject.Find("GameController").GetComponent<ArrowsController>();
-    }
+{   
+    public enum PowerUp { Pistol, SMG, Rifle};
+    public int currentPowerup;
+    public bool riflePowerup = false;
+    public bool pistolPowerup = false;
+    public bool smgPowerup = false;
+    public GameObject pistolIcon;
+    public GameObject smgIcon;
+    public GameObject rifleIcon;
+    Vector2 position = new Vector2(-7, 4);
 
-    // Update is called once per frame
-    void Update()
+    public void SetPoweup (int type)
     {
-        
-    }
-    void powerups(int powerupType)
-    {
-        if (powerupType == 0)
+        if (type == (int)PowerUp.Pistol)
         {
-            scoring.Multiplyscore();
+            pistolPowerup = true;
+            Instantiate(pistolIcon, position, Quaternion.identity);
         }
-        else if (powerupType == 1)
+        else if (type == (int)PowerUp.SMG)
         {
-            arrows.ffscalef = 0.4f;
+            smgPowerup = true;
+            Instantiate(smgIcon, position, Quaternion.identity);
         }
-        else if (powerupType == 2)
+        else if (type == (int)PowerUp.Rifle)
         {
-            arrows.ffscalef =(arrows.ffscalef * 1.25f);
+            riflePowerup = true;
+            Instantiate(rifleIcon, position, Quaternion.identity);
         }
     }
 }

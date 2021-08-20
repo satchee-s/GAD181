@@ -453,7 +453,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Controls:
 
-    SPACEBAR to start/stop
+    Enter to load new enemies
 
     Hit arrows using arrow keys
 
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.4
+  m_fontSize: 30.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -737,6 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a197c444ee3b18e40a246185c0ce7106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPowerup: 0
 --- !u!1 &1035466232
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemy: 0
+  enemyType: 0
 --- !u!50 &1035466234
 Rigidbody2D:
   serializedVersion: 4
@@ -1698,7 +1700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f848bfe7a3ebac848b514e735cfe7270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 00000000010000000200000003000000
   arrowSpeed: 0
   coolDown: 0
   spawnRange: 0
@@ -1739,3 +1740,4 @@ MonoBehaviour:
   KeyToPress: 0
   beatSpeed: 0
   canBePressed: 0
+  ffscalef: 0.2
