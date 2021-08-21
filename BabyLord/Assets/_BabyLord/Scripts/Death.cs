@@ -23,7 +23,7 @@ public class Death : MonoBehaviour
             player.activeEnemy = false;
             button.playState = false;
             button.source.isPaused();
-            //activate respective powerup
+            ActivatePowerUp();
         }
     }
 
@@ -31,7 +31,7 @@ public class Death : MonoBehaviour
     {
         if (player.fightCount < 5)
         {
-            power.SetPoweup(player.enemyType);
+            power.SetPowerup(player.enemyType);
         }
     }
 }

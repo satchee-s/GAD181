@@ -12,24 +12,28 @@ public class PowerUpController : MonoBehaviour
     public GameObject pistolIcon;
     public GameObject smgIcon;
     public GameObject rifleIcon;
-    Vector2 position = new Vector2(-7, 4);
+    public GameObject currentIcon;
+    Vector2 position = new Vector2(-7, -5);
 
-    public void SetPoweup (int type)
+    public void SetPowerup (int type)
     {
         if (type == (int)PowerUp.Pistol)
         {
             pistolPowerup = true;
-            Instantiate(pistolIcon, position, Quaternion.identity);
+            currentIcon = pistolIcon;
+            Instantiate(currentIcon, position, Quaternion.identity);
         }
         else if (type == (int)PowerUp.SMG)
         {
             smgPowerup = true;
-            Instantiate(smgIcon, position, Quaternion.identity);
+            currentIcon = smgIcon;
+            Instantiate(currentIcon, position, Quaternion.identity);
         }
         else if (type == (int)PowerUp.Rifle)
         {
             riflePowerup = true;
-            Instantiate(rifleIcon, position, Quaternion.identity);
+            currentIcon = rifleIcon;
+            Instantiate(currentIcon, position, Quaternion.identity);
         }
     }
 }

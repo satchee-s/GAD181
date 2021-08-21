@@ -51,3 +51,6 @@ TagManager:
   - name: Forcefield
     uniqueID: 3392835671
     locked: 0
+  - name: Powerups
+    uniqueID: 2526081559
+    locked: 0

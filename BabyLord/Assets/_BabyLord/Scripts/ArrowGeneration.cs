@@ -12,9 +12,7 @@ public class ArrowGeneration : MonoBehaviour
 
     private float spawnTime = 0;
     private GameObject newArrow;
-    private Vector2 initialArrowPosition = new Vector2(10f, 0); //sets the point where arrows are spawned
-
-    //public float beatSpeed = 10f;
+    private Vector2 initialArrowPosition = new Vector2(15f, 0); //sets the point where arrows are spawned
 
     Collider2D forceCollider;
     Vector3 colliderSize;

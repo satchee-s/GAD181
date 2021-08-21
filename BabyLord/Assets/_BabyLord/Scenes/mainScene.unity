@@ -388,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790120320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.97, y: -0.2, z: -26.376307}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -426,10 +426,10 @@ RectTransform:
   m_Father: {fileID: 1583368702}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 734, y: 409.95}
-  m_SizeDelta: {x: 412.3347, y: 160.0994}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -88.6, y: -107.9}
+  m_SizeDelta: {x: 412.33472, y: 160.09937}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927748308
 MonoBehaviour:
@@ -451,13 +451,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Controls:
-
-    Enter to load new enemies
-
-    Hit arrows using arrow keys
-
-'
+  m_text: "Controls:\nEnter to start/stop\nHit arrows using \narrow keys\nE to use
+    powerups\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -484,7 +479,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.35
+  m_fontSize: 28
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -694,6 +689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 1353343318}
+  activeMultiplier: 0
 --- !u!1 &999934189
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +734,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPowerup: 0
+  riflePowerup: 0
+  pistolPowerup: 0
+  smgPowerup: 0
+  pistolIcon: {fileID: 2066011278061627214, guid: b5c3e7c0189f038438db68c03bfd22d0, type: 3}
+  smgIcon: {fileID: 8569689037447434899, guid: adb572b21454c1b4db1c8480625fbca9, type: 3}
+  rifleIcon: {fileID: 4374284675709924997, guid: 2abf64a54fda5454bbc1a3a5de80af40, type: 3}
+  currentIcon: {fileID: 0}
 --- !u!1 &1035466232
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemy: 0
+  fightCount: 0
   enemyType: 0
 --- !u!50 &1035466234
 Rigidbody2D:
@@ -1262,6 +1266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 1353343318}
+  activeMultiplier: 0
 --- !u!1 &1583368698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,7 +1467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1787956189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1708,6 +1713,7 @@ MonoBehaviour:
   rifle: {fileID: 4006027348384465740, guid: d62e5027a582b4a44a1a48547e119d04, type: 3}
   boss: {fileID: 6321509650921163442, guid: d62936217e2667542a7f067134e11993, type: 3}
   currentEnemy: {fileID: 0}
+  activePowerup: 0
 --- !u!4 &2094111050
 Transform:
   m_ObjectHideFlags: 0
@@ -1738,6 +1744,4 @@ MonoBehaviour:
   scoring: {fileID: 0}
   enemy: {fileID: 0}
   KeyToPress: 0
-  beatSpeed: 0
   canBePressed: 0
-  ffscalef: 0.2

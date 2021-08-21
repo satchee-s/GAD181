@@ -29,14 +29,12 @@ public class PlayerController : MonoBehaviour
                 enemy.SetEnemyValues(enemyType);
                 activeEnemy = true;
                 Instantiate(enemy.currentEnemy, position, Quaternion.identity);
-                Debug.Log("Enemy number " + fightCount);
                 fightCount++;
             }
 
             if (activeEnemy == false && fightCount == 5)
             {
                 enemy.SetEnemyValues(3);
-                Debug.Log("Enemy number " + fightCount);
                 Instantiate(enemy.currentEnemy, position, Quaternion.identity);
                 activeEnemy = true;
             }

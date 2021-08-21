@@ -27,6 +27,6 @@ public class Forcefield : MonoBehaviour
 
     public void PistolPowerup()
     {
-        transform.localScale = new Vector2(transform.localScale.x + 0.4f, transform.localScale.y + 0.4f);
+        transform.localScale = new Vector2(transform.localScale.x + 1f, transform.localScale.y + 1f);
     }
 }

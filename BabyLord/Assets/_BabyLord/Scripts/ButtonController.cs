@@ -20,13 +20,11 @@ public class ButtonController : MonoBehaviour
             if (playState == false && enemy.activeEnemy == true)//checks if the music is being played or paused
             {
                 source.isPlaying();
-                Debug.Log("Song playing");
                 playState = true;
             }
             else if (playState == true && enemy.activeEnemy == true)
             {
                 source.isPaused();
-                Debug.Log("Song paused");
                 playState = false;
             }
         }

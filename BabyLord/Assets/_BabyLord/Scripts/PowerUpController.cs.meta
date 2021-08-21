@@ -3,7 +3,11 @@ guid: a197c444ee3b18e40a246185c0ce7106
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pistolIcon: {fileID: 2066011278061627214, guid: b5c3e7c0189f038438db68c03bfd22d0, type: 3}
+  - smgIcon: {fileID: 8569689037447434899, guid: adb572b21454c1b4db1c8480625fbca9, type: 3}
+  - rifleIcon: {fileID: 4374284675709924997, guid: 2abf64a54fda5454bbc1a3a5de80af40, type: 3}
+  - currentIcon: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
