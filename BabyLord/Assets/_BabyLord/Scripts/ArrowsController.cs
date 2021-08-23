@@ -13,8 +13,8 @@ public class ArrowsController : MonoBehaviour
     public KeyCode AltKey;
     public bool canBePressed; //buttons pressed on trigger with player   
     float timer = 10f;
-    float increaseFieldSize = 0.2f;
-    float reduceFieldSize = -0.2f;
+    float increaseFieldSize = 0.1f;
+    float reduceFieldSize = -0.1f;
     void Start()
     {
         forcefield = GameObject.Find("Forcefield").GetComponent<Forcefield>();

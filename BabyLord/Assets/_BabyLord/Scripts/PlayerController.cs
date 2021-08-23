@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     EnemyController enemy;
     WinLose win;
+    AudioController audioController;
 
     public bool activeEnemy;
     public int fightCount;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         enemy = GameObject.Find("GameController").GetComponent<EnemyController>();
         win = GameObject.Find("GameController").GetComponent<WinLose>();
+        audioController = GameObject.Find("MusicSource").GetComponent<AudioController>();
 
         activeEnemy = false;
         fightCount = 1;
@@ -27,26 +29,33 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (activeEnemy == false && fightCount < 5)
-            {
-                win.Resume();
-                win.PowerUpText(3);
-                enemyType = (Random.Range(0, 3));
-                enemy.SetEnemyValues(enemyType);
-                activeEnemy = true;
-                Instantiate(enemy.currentEnemy, position, Quaternion.identity);
-                fightCount++;
-            }
+            ChangeEnemy();
+        }
+    }
 
-            if (activeEnemy == false && fightCount == 5)
-            {
-                win.Resume();
-                win.PowerUpText(3);
-                enemyType = 3;
-                enemy.SetEnemyValues(enemyType);
-                Instantiate(enemy.currentEnemy, position, Quaternion.identity);
-                activeEnemy = true;
-            }
+    void ChangeEnemy()
+    {
+        if (activeEnemy == false && fightCount < 5)
+        {
+            win.Resume();
+            win.PowerUpText(3);
+            audioController.ChangeSong();
+            enemyType = (Random.Range(0, 3));
+            enemy.SetEnemyValues(enemyType);
+            activeEnemy = true;
+            Instantiate(enemy.currentEnemy, position, Quaternion.identity);
+            fightCount++;
+        }
+
+        if (activeEnemy == false && fightCount == 5)
+        {
+            win.Resume();
+            win.PowerUpText(3);
+            audioController.ChangeSong();
+            enemyType = 3;
+            enemy.SetEnemyValues(enemyType);
+            Instantiate(enemy.currentEnemy, position, Quaternion.identity);
+            activeEnemy = true;
         }
     }
 }

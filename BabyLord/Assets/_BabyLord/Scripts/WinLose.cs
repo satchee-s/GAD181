@@ -38,6 +38,7 @@ public class WinLose : MonoBehaviour
         else if (wonGame == true && bossFight == true)
         {
             WinningText.text = "You won!" + "\n" + "Press enter to restart";
+            loseGame = true;
         }
     }
 

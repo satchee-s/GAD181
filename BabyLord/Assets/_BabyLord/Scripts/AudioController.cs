@@ -10,6 +10,8 @@ public class AudioController : MonoBehaviour
     public float generationVolume;
     ArrowGeneration arrowGeneration;
     EnemyController enemy;
+    public AudioClip[] clips;
+    int index = 0;
 
     private void Start()
     {
@@ -45,6 +47,13 @@ public class AudioController : MonoBehaviour
     {
         source.Pause(); //pauses the music
         Time.timeScale = 0;
+    }
 
+    public void ChangeSong()
+    {
+        source.clip = clips[index];
+        index++;
+        if (index > 4)
+            index = 0;
     }
 }
