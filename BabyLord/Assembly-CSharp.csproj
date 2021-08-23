@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\_BabyLord\Scripts\StartPowerup.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\ArrowGeneration.cs" />
+    <Compile Include="Assets\_BabyLord\Scripts\WinLose.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\PowerUpController.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\Forcefield.cs" />
     <Compile Include="Assets\_BabyLord\Scripts\PlayerController.cs" />

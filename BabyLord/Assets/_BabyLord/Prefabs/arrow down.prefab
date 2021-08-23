@@ -164,8 +164,8 @@ MonoBehaviour:
   scoring: {fileID: 0}
   enemy: {fileID: 0}
   KeyToPress: 274
+  AltKey: 115
   canBePressed: 0
-  ffscalef: 0.03
 --- !u!50 &1278585359500070953
 Rigidbody2D:
   serializedVersion: 4

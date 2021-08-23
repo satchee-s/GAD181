@@ -164,5 +164,5 @@ MonoBehaviour:
   scoring: {fileID: 0}
   enemy: {fileID: 0}
   KeyToPress: 273
+  AltKey: 119
   canBePressed: 0
-  ffscalef: 0.03

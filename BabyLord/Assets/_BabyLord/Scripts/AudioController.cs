@@ -39,9 +39,12 @@ public class AudioController : MonoBehaviour
     public void isPlaying()
     {
         source.Play(0); //plays the music
+        Time.timeScale = 1;
     }
     public void isPaused()
     {
         source.Pause(); //pauses the music
+        Time.timeScale = 0;
+
     }
 }

@@ -37,12 +37,12 @@ public class StartPowerup : MonoBehaviour
             forcefield.PistolPowerup();
             powerUp.pistolPowerup = false;
         }
-        if (powerUp.smgPowerup == true)
+        else if (powerUp.smgPowerup == true)
         {
             scoring.activeMultiplier = true;
             powerUp.smgPowerup = false;
         }
-        if (powerUp.riflePowerup == true)
+        else if (powerUp.riflePowerup == true)
         {
             arrows.enemy.activePowerup = true;
             powerUp.riflePowerup = false;

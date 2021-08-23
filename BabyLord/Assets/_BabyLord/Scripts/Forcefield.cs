@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Forcefield : MonoBehaviour
 {
     public GameObject player;
+    WinLose win;
+
+    private void Start()
+    {
+        win = GameObject.Find("GameController").GetComponent<WinLose>();
+    }
     public void ChangeSize(float scaleFactor)
     {
         if (transform.localScale.x >= 0.5f)// <- if the forcefield hits the player when it reaches 0.3
@@ -14,7 +19,8 @@ public class Forcefield : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Destroy(player);
+            win.WinText(false, false);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

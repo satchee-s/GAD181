@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     EnemyController enemy;
+    WinLose win;
+
     public bool activeEnemy;
     public int fightCount;
     private Vector2 position = new Vector2(10.5f, 0);
@@ -15,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         enemy = GameObject.Find("GameController").GetComponent<EnemyController>();
+        win = GameObject.Find("GameController").GetComponent<WinLose>();
+
         activeEnemy = false;
         fightCount = 1;
     }
@@ -25,6 +29,8 @@ public class PlayerController : MonoBehaviour
         {
             if (activeEnemy == false && fightCount < 5)
             {
+                win.Resume();
+                win.PowerUpText(3);
                 enemyType = (Random.Range(0, 3));
                 enemy.SetEnemyValues(enemyType);
                 activeEnemy = true;
@@ -34,7 +40,10 @@ public class PlayerController : MonoBehaviour
 
             if (activeEnemy == false && fightCount == 5)
             {
-                enemy.SetEnemyValues(3);
+                win.Resume();
+                win.PowerUpText(3);
+                enemyType = 3;
+                enemy.SetEnemyValues(enemyType);
                 Instantiate(enemy.currentEnemy, position, Quaternion.identity);
                 activeEnemy = true;
             }
