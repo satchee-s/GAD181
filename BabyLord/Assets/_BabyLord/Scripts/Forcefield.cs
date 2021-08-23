@@ -6,6 +6,7 @@ public class Forcefield : MonoBehaviour
 {
     public GameObject player;
     WinLose win;
+    public ParticleSystem particles;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class Forcefield : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            particles.Play();
             transform.localScale = new Vector2(1, 1);
         }
     }

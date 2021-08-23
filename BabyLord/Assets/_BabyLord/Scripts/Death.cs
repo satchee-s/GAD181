@@ -9,7 +9,6 @@ public class Death : MonoBehaviour
     EnemyController enemy;
     PowerUpController power;
     WinLose win;
-    public ParticleSystem sfx;
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -23,20 +22,7 @@ public class Death : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Forcefield"))
         {
-            if (player.enemyType < 3)
-            {
-                win.WinText(true, false);
-            }
-            else if (player.enemyType == 3)
-            {
-                win.WinText(true, true);
-                win.PowerUpText(3);
-            }
-            Destroy(gameObject);
-            player.activeEnemy = false;
-            button.playState = false;
-            button.source.isPaused();
-            ActivatePowerUp();
+            EnemyDeath();
         }
     }
 
@@ -48,9 +34,24 @@ public class Death : MonoBehaviour
             win.PowerUpText(player.enemyType);
         }
     }
-    public void playSfx()
+
+    void EnemyDeath()
     {
-        sfx.playSfx();
+        if (player.enemyType < 3)
+        {
+            win.WinText(true, false);
+        }
+        else if (player.enemyType == 3)
+        {
+            win.WinText(true, true);
+            win.PowerUpText(3);
+        }
+        Destroy(gameObject);
+        player.activeEnemy = false;
+        button.playState = false;
+        button.source.isPaused();
+        ActivatePowerUp();
+
     }
 }
 

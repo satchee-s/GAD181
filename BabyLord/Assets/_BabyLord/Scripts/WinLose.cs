@@ -11,8 +11,20 @@ public class WinLose : MonoBehaviour
     [SerializeField] GameObject winMenu;
     bool loseGame = false;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (loseGame == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+    }
+
     public void WinText(bool wonGame, bool bossFight)
     {
+
         winMenu.SetActive(true);
         if (wonGame == true && bossFight == false)
         {
@@ -52,14 +64,5 @@ public class WinLose : MonoBehaviour
         winMenu.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (loseGame == true)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-        }
-    }
+
 }

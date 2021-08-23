@@ -54,3 +54,6 @@ TagManager:
   - name: Powerups
     uniqueID: 2526081559
     locked: 0
+  - name: Particles
+    uniqueID: 3714611011
+    locked: 0

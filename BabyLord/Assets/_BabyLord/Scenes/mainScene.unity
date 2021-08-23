@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 85756987}
   - component: {fileID: 85756986}
   - component: {fileID: 85756985}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,10 +364,10 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
-  prewarm: 1
-  playOnAwake: 1
-  useUnscaledTime: 0
+  looping: 0
+  prewarm: 0
+  playOnAwake: 0
+  useUnscaledTime: 1
   autoRandomSeed: 1
   startDelay:
     serializedVersion: 2
@@ -5207,7 +5207,7 @@ GameObject:
   - component: {fileID: 755770466}
   - component: {fileID: 755770468}
   - component: {fileID: 755770467}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Death effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5222,7 +5222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755770465}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 10.740395, y: 0, z: 0}
+  m_LocalPosition: {x: 9.8, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1602674838}
@@ -5310,10 +5310,10 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
-  useUnscaledTime: 0
+  useUnscaledTime: 1
   autoRandomSeed: 1
   startDelay:
     serializedVersion: 2
@@ -10012,7 +10012,6 @@ GameObject:
   m_Component:
   - component: {fileID: 790120322}
   - component: {fileID: 790120321}
-  - component: {fileID: 790120323}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -10050,19 +10049,6 @@ Transform:
   m_Father: {fileID: 293929295}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &790120323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790120320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b14c5d351e8aac04aaaa3b614a7dd52d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sfx: {fileID: 0}
 --- !u!1 &927748306
 GameObject:
   m_ObjectHideFlags: 0
@@ -10424,6 +10410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1035466232}
+  particles: {fileID: 755770468}
 --- !u!114 &968000260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10895,7 +10882,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1657943737
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 167e7ba818f0a2146941ac1d1f653a3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11126,7 +11113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602674838}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Particle effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11141,7 +11128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602674837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8496054, y: -0.05075137, z: -10.234132}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 85756987}
@@ -11238,7 +11225,7 @@ GameObject:
   - component: {fileID: 2021981190}
   - component: {fileID: 2021981192}
   - component: {fileID: 2021981191}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fire 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11341,9 +11328,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
