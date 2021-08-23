@@ -9,6 +9,7 @@ public class Death : MonoBehaviour
     EnemyController enemy;
     PowerUpController power;
     WinLose win;
+    public ParticleSystem sfx;
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -47,4 +48,9 @@ public class Death : MonoBehaviour
             win.PowerUpText(player.enemyType);
         }
     }
+    public void playSfx()
+    {
+        sfx.playSfx();
+    }
 }
+
